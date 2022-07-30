@@ -12,7 +12,7 @@ describe("<NumberOfEvents /> component", () => {
   test("render content text of numberOfEvents className correctly", () => {
     const NumberOfEventsWrapper = shallow(<NumberOfEvents events={mockData} />);
     expect(NumberOfEventsWrapper.find(".numberOfEvents").text()).toEqual(
-      "Number of Events:"
+      "Number of Events:Confirm"
     );
   });
 
@@ -23,19 +23,28 @@ describe("<NumberOfEvents /> component", () => {
 
   test("renders text input correctly", () => {
     const NumberOfEventsWrapper = shallow(<NumberOfEvents events={mockData} />);
-    const number = NumberOfEventsWrapper.state("number");
-    expect(NumberOfEventsWrapper.find(".inputNumber").prop("value")).toBe(
-      number
-    );
+    expect(NumberOfEventsWrapper.find(".inputNumber").prop("value")).toBe("");
   });
 
-  test("change state when text input changes", () => {
+  // test("change state when text input changes", () => {
+  //   const NumberOfEventsWrapper = shallow(<NumberOfEvents events={mockData} />);
+  //   NumberOfEventsWrapper.setState({
+  //     number: "2",
+  //   });
+  //   const eventObject = { target: { value: "0" } };
+  //   NumberOfEventsWrapper.find(".inputNumber").simulate("change", eventObject);
+  //   expect(NumberOfEventsWrapper.state("number")).toBe("0");
+  // });
+
+  test("render element with numberOfEvents-btn className", () => {
     const NumberOfEventsWrapper = shallow(<NumberOfEvents events={mockData} />);
-    NumberOfEventsWrapper.setState({
-      number: "2",
-    });
-    const eventObject = { target: { value: "0" } };
-    NumberOfEventsWrapper.find(".inputNumber").simulate("change", eventObject);
-    expect(NumberOfEventsWrapper.state("number")).toBe("0");
+    expect(NumberOfEventsWrapper.find(".numberOfEvents-btn")).toHaveLength(1);
+  });
+
+  test("render content text of numberOfEvents-btn className correctly", () => {
+    const NumberOfEventsWrapper = shallow(<NumberOfEvents events={mockData} />);
+    expect(NumberOfEventsWrapper.find(".numberOfEvents-btn").text()).toEqual(
+      "Confirm"
+    );
   });
 });

@@ -26,7 +26,7 @@ So that I can see the list of events that take place in that city _**
 
 - Given: the user was typing “Berlin” in the city textbox and the list of suggested cities is showing
 - When: the user selects a city (e.g., “Berlin, Germany”) from the list
-- Then: their city should be changed to that city (i.e., “Berlin, Germany”) and the user should receive a list of upcoming events in that city
+- Then: their city should be changed to that city (i.e., “Berlin, Germany”), the list of suggestions should disappear, and the user should receive a list of upcoming events in that city
 
 ###### :pushpin: FEATURE 2: SHOW/HIDE AN EVENT’S DETAILS
 
