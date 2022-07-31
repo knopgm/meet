@@ -12,6 +12,7 @@ class Event extends Component {
 
   render() {
     const { showDetails } = this.state;
+    const { title, dateTime, location, description } = this.props;
 
     const renderEventDetails = () => {
       if (showDetails) {
@@ -21,7 +22,7 @@ class Event extends Component {
             <a href="..." className="eventLink">
               See details on Google Calendar
             </a>
-            <p className="eventDescription">Event description</p>
+            <p className="eventDescription">{description}</p>
             <button
               className="btn-hideDetails"
               onClick={() => this.handleToggleDetails()}
@@ -43,9 +44,9 @@ class Event extends Component {
     };
     return (
       <div>
-        <h1 className="eventTitle">Title</h1>
-        <p className="dateTime">Date-Time</p>
-        <p className="location">Location</p>
+        <h1 className="eventTitle">{title}</h1>
+        <p className="dateTime">{dateTime}</p>
+        <p className="location">{location}</p>
 
         {renderEventDetails()}
       </div>
