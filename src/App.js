@@ -49,6 +49,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        Search for Events in a City:
         <CitySearch
           locations={this.state.locations}
           updateEvents={this.updateEvents}
