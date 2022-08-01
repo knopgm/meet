@@ -161,6 +161,12 @@ input[type="number"] {
   font-family: sans-serif;
 }
 
+@media all and (max-width: 500px) {
+  .button-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
 .Alert {
   position: fixed;
   top: 20px;

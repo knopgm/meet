@@ -2,25 +2,10 @@ import React from "react";
 import { shallow } from "enzyme";
 import Event from "../Event";
 import { mockData } from "../mock-data";
-import { start } from "nprogress";
 
 describe("<Event /> component", () => {
-  //   test("renders text input correctly", () => {
-  //     const query = CitySearchWrapper.state("query");
-  //     expect(CitySearchWrapper.find(".city").prop("value")).toBe(query);
-  //   });
-
   test("render element with eventTitle className", () => {
-    const event = mockData[0];
-    const EventWrapper = shallow(
-      <Event
-        title={event.summary}
-        dateTime="date"
-        location="locatiuon"
-        description={event.description}
-        link="lol"
-      />
-    );
+    const EventWrapper = shallow(<Event />);
     expect(EventWrapper.find(".eventTitle")).toHaveLength(1);
   });
 
