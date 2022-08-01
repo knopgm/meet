@@ -3,16 +3,16 @@ import Event from "./Event";
 
 class EventList extends Component {
   render() {
-    const { events, number, description } = this.props;
+    const { events, number } = this.props;
 
     const eventListMap = events.map((event) => (
-      <li key={event.id}>
+      <li className="event" key={event.id}>
         <Event
-          event={event}
           title={event.summary}
           dateTime={event.start.dateTime}
           location={event.location}
           description={event.description}
+          link={event.htmlLink}
         />
       </li>
     ));

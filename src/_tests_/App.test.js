@@ -75,4 +75,27 @@ describe("<App /> integration", () => {
     expect(AppWrapper.state("events")).toEqual(allEvents);
     AppWrapper.unmount();
   });
+
+  // test("render EventList with the new state after change on the handleInputChange", async () => {
+  //   const AppWrapper = mount(<App />);
+  //   const inputValue = AppWrapper.state("number");
+  //   await NumberOfEvents.instance().handleInputChange(inputValue);
+
+  //   expect(AppWrapper.find(EventList).props().number).toBe(inputValue);
+  //   expect(AppWrapper.find(EventList).props().number).toHaveLength(1);
+
+  //   AppWrapper.unmount();
+  // });
+
+  // test("call onChange prop with current input value on Confirm btn click", () => {
+  //   const mockOnChange = jest.fn();
+  //   const NumberOfEventsWrapper = shallow(
+  //     <NumberOfEvents onChange={mockOnChange} />
+  //   );
+  //   const eventObject = { target: { value: "14" } };
+  //   NumberOfEventsWrapper.find(".inputNumber").simulate("change", eventObject);
+  //   NumberOfEventsWrapper.find(".numberOfEvents-btn").simulate("click");
+  //   expect(mockOnChange.mock.calls.length).toEqual(1);
+  //   expect(mockOnChange.mock.calls[0][0]).toBe("14");
+  // });
 });

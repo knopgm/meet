@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 .App {
   text-align: center;
-  padding: 2% 5%;
+  padding: 2%;
 }
 
 .App * {
@@ -17,6 +17,17 @@ p {
   margin: 5px 0;
 }
 
+.AppSubtitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.numberOfEventsSubtitle {
+  font-size: 20px;
+  font-weight: 300;
+}
+
 .display-none {
   display: none;
 }
@@ -29,7 +40,7 @@ input[type="number"] {
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
   outline: none;
-  border: 1px solid #ccc;
+  border: 1px solid #9c9c9f;
   font-size: 14px;
   line-height: 20px;
   align-self: center;
@@ -77,7 +88,7 @@ input[type="number"] {
 }
 
 .event {
-  padding: 10px 10px 35px;
+  padding: 10px;
   margin-bottom: 10px;
   text-align: left;
   border: 1px solid #ccc;
@@ -85,14 +96,36 @@ input[type="number"] {
   position: relative;
 }
 
-.details-btn {
-  position: absolute;
+.btn-showDetails,
+.btn-hideDetails,
+.numberOfEvents-btn {
   right: 5px;
   bottom: 5px;
   padding: 5px 8px;
   border-radius: 4px;
+  border-color: #c7c7c7;
+  box-shadow: 1px 2px 5px #888888;
   outline: none;
+  grid-column: 4;
   cursor: pointer;
+}
+
+.numberOfEvents-btn {
+  margin-top: 10px;
+}
+
+.search-wrapper {
+  position: fixed;
+  overflow: hidden;
+  width: 96%;
+  background-color: #52bad5;
+  border-radius: 4px;
+  padding: 10px;
+  z-index: 10;
+}
+
+.eventsWrapper {
+  margin-top: 338px;
 }
 
 .name {
@@ -122,9 +155,9 @@ input[type="number"] {
 
 .button-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
-  padding: 20px;
+  padding: 10px;
   font-family: sans-serif;
 }
 

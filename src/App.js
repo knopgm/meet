@@ -49,13 +49,19 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        Search for Events in a City:
-        <CitySearch
-          locations={this.state.locations}
-          updateEvents={this.updateEvents}
-        />
-        <NumberOfEvents onChange={this.handleInputChange} />
-        <EventList events={this.state.events} number={this.state.number} />
+        <div className="search-wrapper">
+          <h1 className="AppTitle">Meet App</h1>
+          <p className="AppSubtitle">Choose your nearest City:</p>
+
+          <CitySearch
+            locations={this.state.locations}
+            updateEvents={this.updateEvents}
+          />
+          <NumberOfEvents onChange={this.handleInputChange} />
+        </div>
+        <div className="eventsWrapper">
+          <EventList events={this.state.events} number={this.state.number} />
+        </div>
       </div>
     );
   }
