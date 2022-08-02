@@ -3,10 +3,10 @@ import Event from "./Event";
 
 class EventList extends Component {
   render() {
-    const { events, number } = this.props;
+    const { events, eventCount } = this.props;
 
-    const eventListMap = events.map((event) => (
-      <li className="event" key={event.id}>
+    const eventListMap = events.map((event, index) => (
+      <li className="event" key={`${event.id}-${index}`}>
         <Event
           title={event.summary}
           dateTime={event.start.dateTime}
@@ -18,8 +18,8 @@ class EventList extends Component {
     ));
     return (
       <>
-        <ul className="EventList">
-          {number !== "" ? eventListMap.slice(0, number) : eventListMap}
+        <ul className="eventList">
+          {eventCount !== "" ? eventListMap.slice(0, eventCount) : eventListMap}
         </ul>
       </>
     );

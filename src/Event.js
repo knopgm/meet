@@ -17,12 +17,15 @@ class Event extends Component {
     const renderEventDetails = () => {
       if (showDetails) {
         return (
-          <div>
-            <h3 className="subtitle">About event:</h3>
-            <a href="{link}" target="_blank" className="eventLink">
-              See details on Google Calendar
-            </a>
-            <p className="eventDescription">{description}</p>
+          <div className="eventCardWrapper">
+            <div className="eventInfosWrapper">
+              <h3 className="subtitle">About event:</h3>
+              <a href="{link}" target="_blank" className="eventLink">
+                See details on Google Calendar
+              </a>
+              <p className="eventDescription">{description}</p>
+            </div>
+
             <div className="button-wrapper">
               <button
                 className="btn-hideDetails"
