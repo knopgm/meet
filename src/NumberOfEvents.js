@@ -2,10 +2,18 @@ import React, { Component } from "react";
 
 class NumberOfEvents extends Component {
   state = {
-    inputValue: "",
+    inputValue: 32,
   };
+
+  handleChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    this.setState({ inputValue: value });
+    this.props.onChange(value);
+  };
+
   render() {
-    const { onChange, eventCount } = this.props;
     return (
       <div className="numberOfEvents">
         <p className="numberOfEventsSubtitle">Number of Events:</p>
@@ -13,17 +21,8 @@ class NumberOfEvents extends Component {
           type="number"
           className="inputNumber"
           value={this.state.inputValue}
-          onChange={(event) =>
-            this.setState({ inputValue: event.target.value })
-          }
-          placeholder={eventCount}
+          onChange={this.handleChange}
         />
-        <button
-          className="numberOfEvents-btn"
-          onClick={() => onChange(this.state.inputValue)}
-        >
-          Confirm
-        </button>
       </div>
     );
   }

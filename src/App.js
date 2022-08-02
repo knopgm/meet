@@ -12,7 +12,7 @@ class App extends Component {
   state = {
     events: [],
     locations: [],
-    number: "",
+    eventCount: "",
   };
 
   componentDidMount() {
@@ -42,7 +42,7 @@ class App extends Component {
 
   handleInputChange = (inputValue) => {
     this.setState({
-      number: inputValue,
+      eventCount: inputValue,
     });
   };
 
@@ -60,7 +60,10 @@ class App extends Component {
           <NumberOfEvents onChange={this.handleInputChange} />
         </div>
         <div className="eventsWrapper">
-          <EventList events={this.state.events} number={this.state.number} />
+          <EventList
+            events={this.state.events}
+            eventCount={this.state.eventCount}
+          />
         </div>
       </div>
     );
