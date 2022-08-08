@@ -43,7 +43,7 @@ So that I can have a general view of all the events or look into a specific one 
 > Scenario 2: User can expand an event to see its details.
 
 - Given: user interest in one event
-- When: user clicks on the event's name
+- When: user clicks on the event's Show Details button
 - Then: the event should be expanded to display all details for the user
 
 > Scenario 3: User can collapse an event to hide its details.
