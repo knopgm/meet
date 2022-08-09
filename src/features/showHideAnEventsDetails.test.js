@@ -1,12 +1,9 @@
 import { loadFeature, defineFeature } from "jest-cucumber";
 import React from "react";
-import { mount, shallow } from "enzyme";
+import { mount } from "enzyme";
 import App from "../App";
 import { mockData } from "../mock-data";
-import CitySearch from "../CitySearch";
 import Event from "../Event";
-import { extractLocations, getEvents } from "../api";
-import EventList from "../EventList";
 
 const feature = loadFeature("./src/features/showHideAnEventsDetails.feature");
 
@@ -62,31 +59,29 @@ defineFeature(feature, (test) => {
 
   test("User can collapse an event to hide its details.", ({
     given,
-    and,
     when,
     then,
   }) => {
     let AppWrapper;
-    let EventWrapper;
+
     given("user finished their event analysis", () => {
       AppWrapper = mount(<App />);
       AppWrapper.update();
 
-      EventWrapper = AppWrapper.find(Event).at(0);
-      EventWrapper.find(".event_Details");
+      AppWrapper.find(".btn-showDetails").at(0).simulate("click");
     });
 
     when(
       "user clicks on the hide details button of the modal event display",
       () => {
-        EventWrapper.find(".btn-hideDetails").simulate("click");
+        AppWrapper.find(".btn-hideDetails").at(0).simulate("click");
       }
     );
 
     then(
       "the event should hide its details again and the main view of all events should be on display",
       () => {
-        // expect(EventWrapper.find(".event_Details")).toHaveLength(0);
+        expect(AppWrapper.find(".event_Details")).toHaveLength(0);
       }
     );
   });
