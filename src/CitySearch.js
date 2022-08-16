@@ -7,6 +7,7 @@ class CitySearch extends Component {
     suggestions: [],
     showSuggestions: false,
     infoText: "",
+    showInfo: false,
   };
 
   handleInputChanged = (event) => {
@@ -21,12 +22,14 @@ class CitySearch extends Component {
         showSuggestions: false,
         infoText:
           "We can not find the city you are looking for. Please try another city!",
+        showInfo: true,
       });
     } else {
       return this.setState({
         query: value,
         suggestions,
         infoText: "",
+        showInfo: false,
       });
     }
   };
@@ -43,7 +46,10 @@ class CitySearch extends Component {
   render() {
     return (
       <div className="CitySearch">
-        <div className="infoAlertWrapper">
+        <div
+          className="infoAlertWrapper"
+          style={this.state.showError ? {} : { display: "none" }}
+        >
           <InfoAlert text={this.state.infoText} />
         </div>
 
