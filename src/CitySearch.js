@@ -48,7 +48,7 @@ class CitySearch extends Component {
       <div className="CitySearch">
         <div
           className="infoAlertWrapper"
-          style={this.state.showError ? {} : { display: "none" }}
+          style={this.state.showInfo ? {} : { display: "none" }}
         >
           <InfoAlert text={this.state.infoText} />
         </div>
