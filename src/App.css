@@ -195,7 +195,7 @@ input[type="number"] {
 }
 
 .Alert {
-  position: fixed;
+  position: inherit;
   top: 20px;
 }
 
