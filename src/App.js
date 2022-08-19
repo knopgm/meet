@@ -7,12 +7,15 @@ import { extractLocations, getEvents } from "./api";
 import NumberOfEvents from "./NumberOfEvents";
 
 import "./nprogress.css";
+import { InfoWarning } from "./Alert";
 
 class App extends Component {
   state = {
     events: [],
     locations: [],
     eventCount: "",
+    infoText: "",
+    showInfo: false,
   };
 
   componentDidMount() {
@@ -20,6 +23,17 @@ class App extends Component {
     getEvents().then((events) => {
       if (this.mounted) {
         this.setState({ events, locations: extractLocations(events) });
+      }
+      if (!navigator.onLine) {
+        this.setState({
+          infoText:
+            "Warning! Your network is not available. The list of events displayed has been loaded from the last conected vizualization.",
+          showInfo: true,
+        });
+      } else {
+        this.setState({
+          showInfo: false,
+        });
       }
     });
   }
@@ -58,6 +72,12 @@ class App extends Component {
             updateEvents={this.updateEvents}
           />
           <NumberOfEvents onChange={this.handleInputChange} />
+          <div
+            className="infoAlertWrapper"
+            style={this.state.showInfo ? {} : { display: "none" }}
+          >
+            <InfoWarning text={this.state.infoText} />
+          </div>
         </div>
         <div className="eventsWrapper">
           <EventList
