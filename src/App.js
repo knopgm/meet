@@ -27,7 +27,7 @@ class App extends Component {
       if (!navigator.onLine) {
         this.setState({
           infoText:
-            "Warning! Your network is not available. The list of events displayed has been loaded from the last conected vizualization.",
+            "Warning! Your network is not available. The list of events displayed has been loaded from the last connected visualization.",
           showInfo: true,
         });
       } else {
