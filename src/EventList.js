@@ -19,7 +19,9 @@ class EventList extends Component {
     return (
       <>
         <ul className="eventList">
-          {eventCount !== "" ? eventListMap.slice(0, eventCount) : eventListMap}
+          {eventCount !== ""
+            ? eventListMap.slice(0, eventCount)
+            : eventListMap.slice(0, 32)}
         </ul>
       </>
     );

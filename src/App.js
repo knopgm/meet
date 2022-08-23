@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import EventList from "./EventList";
 import CitySearch from "./CitySearch";
-// import { mockData } from "./mock-data";
 
 import { extractLocations, getEvents, checkToken, getAccessToken } from "./api";
 import NumberOfEvents from "./NumberOfEvents";
