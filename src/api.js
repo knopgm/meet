@@ -17,6 +17,11 @@ export const extractLocations = (events) => {
 };
 
 export const checkToken = async (accessToken) => {
+  // In development mode is no need to check the Token.
+  if (process.env.NODE_ENV === "development") {
+    return Promise.resolve({});
+  }
+
   const result = await fetch(
     `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
   )
