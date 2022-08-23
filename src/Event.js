@@ -12,7 +12,7 @@ class Event extends Component {
 
   render() {
     const { showDetails } = this.state;
-    const { title, dateTime, location, description, link } = this.props;
+    const { title, dateTime, location, description } = this.props;
 
     const renderEventDetails = () => {
       if (showDetails) {

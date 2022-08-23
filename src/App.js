@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import EventList from "./EventList";
 import CitySearch from "./CitySearch";
+// import { mockData } from "./mock-data";
 
 import { extractLocations, getEvents, checkToken, getAccessToken } from "./api";
 import NumberOfEvents from "./NumberOfEvents";
@@ -34,8 +35,7 @@ class App extends Component {
         }
         if (!navigator.onLine) {
           this.setState({
-            infoText:
-              "Warning! Your network is not available. The list of events displayed has been loaded from the last connected visualization.",
+            infoText: "Warning! Your network is not available.",
             showInfo: true,
           });
         } else {
