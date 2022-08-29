@@ -126,10 +126,6 @@ input[type="number"] {
   z-index: 10;
 }
 
-.chartWrapper {
-  margin-top: 300px;
-}
-
 .eventsWrapper {
   padding: 0 2%;
 }
@@ -206,6 +202,7 @@ input[type="number"] {
 }
 
 .data-vis-wrapper {
+  margin-top: 300px;
   display: flex;
   align-items: center;
   flex-direction: column;

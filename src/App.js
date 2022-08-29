@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import EventList from "./EventList";
 import CitySearch from "./CitySearch";
+import EventGenre from "./EventGenre";
 
 import { extractLocations, getEvents, checkToken, getAccessToken } from "./api";
 import NumberOfEvents from "./NumberOfEvents";
@@ -92,7 +93,7 @@ class App extends Component {
   };
 
   render() {
-    const { locations, numberOfEvents } = this.state;
+    const { locations, events } = this.state;
     if (this.state.showWelcomeScreen === undefined)
       return <div className="App" />;
     return (
@@ -114,8 +115,10 @@ class App extends Component {
             <InfoWarning text={this.state.infoText} />
           </div>
         </div>
-        <div className="chartWrapper">
-          <h3>Events in each city</h3>
+        <div className="data-vis-wrapper">
+          <h3 className="chart-title">Events by category</h3>
+          <EventGenre events={events} />
+          <h3 className="chart-title">Events in each city</h3>
           <ResponsiveContainer height={400}>
             <ScatterChart
               margin={{
@@ -126,7 +129,7 @@ class App extends Component {
               }}
             >
               <CartesianGrid />
-              <XAxis type="category" dataKey="city" name="city" />
+              <XAxis type="category" dataKey="city" />
               <YAxis
                 allowDecimals={false}
                 type="number"
