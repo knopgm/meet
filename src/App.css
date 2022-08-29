@@ -126,8 +126,11 @@ input[type="number"] {
   z-index: 10;
 }
 
-.eventsWrapper {
+.chartWrapper {
   margin-top: 300px;
+}
+
+.eventsWrapper {
   padding: 0 2%;
 }
 
