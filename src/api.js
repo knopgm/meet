@@ -22,6 +22,10 @@ export const checkToken = async (accessToken) => {
     return Promise.resolve({});
   }
 
+  if (!navigator.onLine && accessToken) {
+    return Promise.resolve({});
+  }
+
   const result = await fetch(
     `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
   )
