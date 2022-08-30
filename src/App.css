@@ -202,17 +202,40 @@ input[type="number"] {
 }
 
 .data-vis-wrapper {
-  margin-top: 300px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  display: grid;
 }
-.data-vis-wrapper .recharts-responsive-container {
-  min-width: 100%;
-  display: flex;
+
+@media only screen and (min-width: 992px) {
+  .data-vis-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
 }
+
 .recharts-surface {
   overflow: visible;
+}
+
+.charts-container button {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  text-align: center;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+  width: 200px;
+  font-size: 20px;
+  align-self: center;
+}
+
+.charts-container {
+  margin-top: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.charts-container-hide :nth-child(1) {
+  order: 5;
 }
 
 .login-button {
@@ -265,16 +288,4 @@ input[type="number"] {
   font-size: 14px;
   letter-spacing: 0.2px;
   font-family: "Roboto";
-}
-
-@media only screen and (min-width: 992px) {
-  .data-vis-wrapper {
-    flex-direction: row;
-  }
-  .data-vis-wrapper .recharts-responsive-container {
-    flex-basis: 50%;
-    max-width: 50%;
-    min-width: auto;
-    margin: 0 auto;
-  }
 }
