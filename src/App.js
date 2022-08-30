@@ -28,6 +28,7 @@ class App extends Component {
     infoText: "",
     showInfo: false,
     showWelcomeScreen: undefined,
+    buttonExpanded: false,
   };
 
   async componentDidMount() {
@@ -92,6 +93,11 @@ class App extends Component {
     return data;
   };
 
+  showDetailsToggle() {
+    //if there is a click, the state goes from false to true, then true to false
+    this.setState({ buttonExpanded: !this.state.buttonExpanded });
+  }
+
   render() {
     const { locations, events } = this.state;
     if (this.state.showWelcomeScreen === undefined)
@@ -115,33 +121,56 @@ class App extends Component {
             <InfoWarning text={this.state.infoText} />
           </div>
         </div>
-        <div className="data-vis-wrapper">
-          <h3 className="chart-title">Events by category</h3>
-          <EventGenre events={events} />
-          <h3 className="chart-title">Events in each city</h3>
-          <ResponsiveContainer height={400}>
-            <ScatterChart
-              margin={{
-                top: 20,
-                right: 20,
-                bottom: 20,
-                left: 20,
-              }}
-            >
-              <CartesianGrid />
-              <XAxis type="category" dataKey="city" />
-              <YAxis
-                allowDecimals={false}
-                type="number"
-                dataKey="number"
-                name="number of events"
-              />
-              <Tooltip cursor={{ strokeDasharray: "3 3" }} />
-              <Scatter data={this.getData()} fill="#8884d8" />
-            </ScatterChart>
-          </ResponsiveContainer>
+        <div></div>
+        <div
+          className={
+            this.state.buttonExpanded
+              ? "charts-container charts-container-hide"
+              : "charts-container"
+          }
+        >
+          <button
+            onClick={() => this.showDetailsToggle()}
+            className={this.state.buttonExpanded ? "show-less" : "show-more"}
+          >
+            {/**button text is hide details if state is true, otherwise it's "see details" */}
+            {this.state.buttonExpanded
+              ? "Hide data charts"
+              : "View Data Charts"}
+          </button>
+          {this.state.buttonExpanded && (
+            <div className="data-vis-wrapper">
+              <div>
+                <h3 className="chart-title">Events by category</h3>
+                <EventGenre events={events} />
+              </div>
+              <div>
+                <h3 className="chart-title">Events in each city</h3>
+                <ResponsiveContainer height={400}>
+                  <ScatterChart
+                    margin={{
+                      top: 20,
+                      right: 20,
+                      bottom: 20,
+                      left: 20,
+                    }}
+                  >
+                    <CartesianGrid />
+                    <XAxis type="category" dataKey="city" />
+                    <YAxis
+                      allowDecimals={false}
+                      type="number"
+                      dataKey="number"
+                      name="number of events"
+                    />
+                    <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+                    <Scatter data={this.getData()} fill="#8884d8" />
+                  </ScatterChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+          )}
         </div>
-
         <div className="eventsWrapper">
           <EventList
             events={this.state.events}
