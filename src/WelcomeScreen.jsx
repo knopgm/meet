@@ -30,6 +30,7 @@ o.svg"
         </div>
       </div>
       <a
+        className="privacy-link"
         href="https://knopgm.github.io/meet/privacy.html"
         rel="nofollow noopener"
       >
