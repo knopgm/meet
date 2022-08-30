@@ -282,10 +282,22 @@ input[type="number"] {
   height: 18px;
 }
 .btn-text {
-  float: right;
-  margin: 11px 11px 0 0;
+  border: none;
+  display: flex;
+  background-color: transparent;
   color: #fff;
+  float: right;
+  font-family: Roboto;
   font-size: 14px;
+  height: 100%;
   letter-spacing: 0.2px;
-  font-family: "Roboto";
+  text-align: center;
+  width: 74%;
+  width: 80%;
+  padding-left: 18px;
+}
+.privacy-link {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
 }
