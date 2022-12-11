@@ -1,10 +1,33 @@
 # meet-App
 
-->>> Is a serverless progressive application with React that uses a test-driven development (TDD) technique. To fetch upcoming events, the Google Calendar API will be used.
-->>> The app will provide a visually appealing events chart where the users can organize their events, filter and share their chart with friends, colleagues or employees.
-->>> The events could be seen even without an internet connection on any device of the user's choice.
+## Description
 
-###### :pushpin: FEATURE 1: FILTER EVENTS BY CITY
+A serverless progressive application with React that uses a test-driven development (TDD) technique.
+
+The app will provide a visually appealing events chart where the users can organize their events, filter and share their chart with friends, colleagues or employees.
+
+->>>The events could be seen even without an internet connection on any device of the user's choice.
+
+## How to run
+
+Find the main file of the meet app in your terminal an run: "npm start"
+For users there is a public link hosted on github pages: https://knopgm.github.io/meet/
+
+PS.: Amazon Cloud should Allow this app to be public.
+Otherwise it need to be allowed directly by adding a email contact with the app developer.
+
+## Dependencies
+
+- JavaScript
+- React API
+- Google Calendar
+- atatus-spa
+- axios
+- nprogress
+
+# User Stories
+
+## :pushpin: FEATURE 1: FILTER EVENTS BY CITY
 
 **_ As a user
 I should be able to “filter events by city”
@@ -28,7 +51,7 @@ So that I can see the list of events that take place in that city _**
 - When: the user selects a city (e.g., “Berlin, Germany”) from the list
 - Then: their city should be changed to that city (i.e., “Berlin, Germany”), the list of suggestions should disappear, and the user should receive a list of upcoming events in that city
 
-###### :pushpin: FEATURE 2: SHOW/HIDE AN EVENT’S DETAILS
+## :pushpin: FEATURE 2: SHOW/HIDE AN EVENT’S DETAILS
 
 **_ As a user
 I should be able to expand/collapse event details
@@ -52,7 +75,7 @@ So that I can have a general view of all the events or look into a specific one 
 - When: user clicks on the back button/ outside of the modal event display
 - Then: the event should hide its details again and the main view of all events should be on display
 
-###### :pushpin: FEATURE 3: SPECIFY NUMBER OF EVENTS
+## :pushpin: FEATURE 3: SPECIFY NUMBER OF EVENTS
 
 **_ As a user
 I should be able to specify the number of events that the board will display
@@ -70,7 +93,7 @@ So that the board won't be overcrowded and I could easily find useful informatio
 - When: user sets a number of events to be visible on the chart
 - Then: the event chart should display the number of events that the user specified
 
-###### :pushpin: FEATURE 4: USE THE APP WHEN OFFLINE
+## :pushpin: FEATURE 4: USE THE APP WHEN OFFLINE
 
 **_ As a user
 I should be able to use my meet app even without internet
@@ -88,7 +111,7 @@ So that I still have easy access to all my events and won't forget to save new o
 - When: the app isn't in sync with the city time range
 - Then: the app will display an alert of the async city time range.
 
-###### :pushpin: FEATURE 5: DATA VISUALIZATION
+## :pushpin: FEATURE 5: DATA VISUALIZATION
 
 **_ As a user
 I should be able to analyse my events after filtering the city
